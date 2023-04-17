@@ -15,6 +15,7 @@ public class BasicBodyFromFIle {
                         queryParam("key", "qaclick123").
                         header("Content-type","application/json").
                         body(Payload.addPayload())
+                        // for reading json from file can be used .body(new String(Files.readAllBytes(Path.get(PC path)))
                         .when().post("/maps/api/place/add/json")
                         .then().log().all().assertThat().statusCode(200)
                         .body("scope",equalTo("APP"))
