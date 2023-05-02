@@ -20,6 +20,7 @@ public class BasicBodyFromFIle {
                         .then().log().all().assertThat().statusCode(200)
                         .body("scope",equalTo("APP"))
                         .header("server",containsString("Apache"));
+
             }
         }
 
